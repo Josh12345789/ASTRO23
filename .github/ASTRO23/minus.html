@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINUS | RTW DROP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --crtz-green: #2d362e; /* Iconic Forest Green */
+            --crtz-yellow: #f5c400; /* Safety Yellow */
+            --crtz-black: #1a1a1a;
+            --crtz-grey: #d1cccc;
+        }
+
+        body {
+            background-color: var(--crtz-grey);
+            color: var(--crtz-black);
+            font-family: 'Courier Prime', monospace;
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+        }
+
+        /* Military Header Section */
+        .header-banner {
+            background-color: var(--crtz-black);
+            color: var(--crtz-yellow);
+            padding: 15px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-align: center;
+            border-bottom: 4px solid var(--crtz-green);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Stardos Stencil', cursive;
+            font-size: clamp(4rem, 15vw, 8rem);
+            color: var(--crtz-green);
+            margin: 20px 0;
+            line-height: 0.8;
+        }
+
+        /* The "Price Tag" - Top Placement */
+        .top-price {
+            background: var(--crtz-green);
+            color: white;
+            display: inline-block;
+            padding: 10px 40px;
+            font-family: 'Stardos Stencil', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            transform: rotate(-1deg);
+        }
+
+        /* Image Styling */
+        .hero-img-box {
+            position: relative;
+            border: 2px solid var(--crtz-black);
+            padding: 10px;
+            background: #fff;
+            margin-bottom: 40px;
+            box-shadow: 15px 15px 0px var(--crtz-green);
+        }
+
+        .main-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(10%) contrast(1.1);
+        }
+
+        /* Stamp/Badge */
+        .restricted-stamp {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: crimson;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            border: 3px double white;
+            transform: rotate(15deg);
+            font-size: 0.7rem;
+        }
+
+        .info-section {
+            border-top: 2px dashed var(--crtz-black);
+            padding-top: 30px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .instruction {
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        /* The Button */
+        .crtz-btn {
+            display: block;
+            background-color: var(--crtz-black);
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            font-family: 'Stardos Stencil', cursive;
+            font-size: 1.2rem;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .crtz-btn:hover {
+            background-color: var(--crtz-green);
+            color: var(--crtz-yellow);
+        }
+
+        footer {
+            margin-top: 60px;
+            padding: 20px;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        RESTRICTED ACCESS // LUSAKA DROP // 2026
+    </div>
+
+    <div class="container">
+        <h1>MINUS</h1>
+        
+        <div class="top-price">K250</div>
+
+        <div class="hero-img-box">
+            <span class="restricted-stamp">PRE-ORDER<br>ONLY</span>
+            <img src="M.jpg" alt="Minus Windbreaker" class="main-img">
+        </div>
+
+        <div class="info-section">
+            <p class="instruction">
+                HIGH-SPEC WINDBREAKER. WATER RESISTANT. 
+                CHOOSE AN ITEM AND COORDINATE WITH THE SUPPLIER IMMEDIATELY. 
+            </p>
+
+            <a href="https://wa.me/qr/JHU7JLO4QDFBD1" class="crtz-btn">COORDINATE WITH SUPPLIER</a>
+        </div>
+
+        <footer>NO RULES. THE WORLD IS YOURS.</footer>
+    </div>
+
+</body>
+</html>

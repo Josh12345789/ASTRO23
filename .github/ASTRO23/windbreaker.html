@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINUS | DARK DROP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-deep: #050505;
+            --surface: #111111;
+            --accent-glow: #5c2ec7; /* Your signature purple */
+            --highlight: #00ff88;    /* Neon green for the Contact/Price */
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Hero Image - Maximum Visibility */
+        .hero-container {
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 20px;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .main-img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid #222;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.8);
+            display: block;
+        }
+
+        /* The Header Section */
+        header {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: clamp(4rem, 12vw, 8rem);
+            margin: 0;
+            line-height: 0.9;
+            letter-spacing: 2px;
+            background: linear-gradient(to bottom, #fff, #444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Floating Info Box */
+        .info-card {
+            background: var(--surface);
+            width: 90%;
+            max-width: 600px;
+            margin: -50px auto 40px; /* Overlaps the big image */
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #333;
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        .price-label {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3rem;
+            color: var(--highlight);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .preorder-text {
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        /* HIGH VISIBILITY CONTACT AREA */
+        .contact-box {
+            background: var(--accent-glow);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-box span {
+            display: block;
+            font-weight: 900;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .whatsapp-btn {
+            display: block;
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
+            padding: 18px;
+            border-radius: 10px;
+            font-weight: 900;
+            font-size: 1.1rem;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.03);
+            background-color: var(--highlight);
+        }
+
+        .footer {
+            padding: 40px;
+            color: #333;
+            font-size: 0.7rem;
+            letter-spacing: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>WINDBREAKERS</h1>
+    </header>
+
+    <div class="hero-container">
+        <img src="WINDBREAKERS.jpg" alt="Minus Collection" class="main-img">
+    </div>
+
+    <div class="info-card">
+        <span class="price-label">K550</span>
+        <span class="preorder-text">Strictly Pre-Orders Only</span>
+        
+        <p style="color: #bbb; line-height: 1.6; margin-bottom: 30px;">
+            Engineered for performance. Minimalist design. Premium wind protection. 
+        </p>
+
+        <div class="contact-box">
+            <span>Ready to Purchase?</span>
+            <a href="https://wa.me/qr/JHU7JLO4QDFBD1" class="whatsapp-btn">CONTACT SUPPLIER NOW</a>
+        </div>
+    </div>
+
+    <div class="footer">MINUS // LUSAKA 2026</div>
+
+</body>
+</html>

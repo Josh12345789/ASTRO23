@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRACKSUITS | Cosmic Hero Drop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --space-bg: #0a061a;
+            --orbit-purple: #5c2ec7;
+            --ring-gold: #ffcc00;
+            --neon-pink: #ec7bca;
+        }
+
+        body {
+            background-color: var(--space-bg);
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* --- STYLIZED SATURN --- */
+        .saturn-container {
+            position: fixed;
+            top: 10%;
+            left: -50px;
+            width: 300px;
+            height: 300px;
+            z-index: -1;
+            transform: rotate(-15deg);
+            opacity: 0.6;
+        }
+
+        .saturn-body {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #a388cc 0%, #140b2e 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 40px rgba(163, 136, 204, 0.3);
+            z-index: 1;
+        }
+
+        .saturn-rings {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(75deg) scaleX(0.2);
+            width: 350px;
+            height: 350px;
+            border: 12px solid rgba(255, 204, 0, 0.6);
+            border-radius: 50%;
+            animation: ring-pulse 8s infinite alternate ease-in-out;
+        }
+
+        @keyframes ring-pulse {
+            from { transform: translate(-50%, -50%) rotate(75deg) scaleX(0.18); opacity: 0.4; }
+            to { transform: translate(-50%, -50%) rotate(80deg) scaleX(0.25); opacity: 0.8; }
+        }
+
+        /* --- CONTENT --- */
+        .container {
+            max-width: 900px; /* Wider container for bigger image */
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            text-transform: uppercase;
+            margin: 0;
+            letter-spacing: -4px;
+            line-height: 0.85;
+            background: linear-gradient(to bottom, #fff, #666);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            margin: 40px auto;
+            width: 100%;
+            max-width: 750px; /* Increased from 500px */
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image-wrapper:hover {
+            transform: scale(1.02);
+        }
+
+        .main-img {
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 100px rgba(92, 46, 199, 0.3); /* Purple glow */
+        }
+
+        .info-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 50px 30px;
+            border-radius: 32px;
+            margin-top: -60px; /* Overlap effect */
+            position: relative;
+            z-index: 5;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .marker-desc {
+            font-family: 'Permanent Marker', cursive;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            color: var(--neon-pink);
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .price-box {
+            background: #fff;
+            color: #000;
+            padding: 10px 30px;
+            font-weight: 800;
+            font-size: 2rem;
+            border-radius: 12px;
+            transform: skewX(-10deg);
+        }
+
+        .cta-btn {
+            display: block;
+            background: var(--orbit-purple);
+            color: white;
+            text-decoration: none;
+            padding: 22px;
+            border-radius: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .cta-btn:hover {
+            background: #fff;
+            color: #000;
+            box-shadow: 0 0 30px var(--neon-pink);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="saturn-container">
+        <div class="saturn-body"></div>
+        <div class="saturn-rings"></div>
+    </div>
+
+    <div class="container">
+        <h1>TRACKSUIT<br>COLLECTION</h1>
+
+        <div class="hero-image-wrapper">
+            <img src="tracksuits.jpg" alt="Collection Preview" class="main-img">
+        </div>
+
+        <div class="info-panel">
+            <span class="marker-desc">EACH TRACKSUIT GOING AT K650 ,PREORDERS ONLY.</span>
+            
+            <div class="price-row">
+                <div class="price-box">K700</div>
+            </div>
+
+            <a href="https://wa.me/qr/JHU7JLO4QDFBD1" class="cta-btn">Secure Your Fit Now</a>
+        </div>
+    </div>
+
+</body>
+</html>
