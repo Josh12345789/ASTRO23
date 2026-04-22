@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIKE | PRE-ORDER DROP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;900&family=Permanent+Marker&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --nike-black: #000000;
+            --nike-white: #ffffff;
+            --nike-orange: #ff6600; /* Classic Nike accent */
+        }
+
+        body {
+            background-color: var(--nike-white);
+            color: var(--nike-black);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* --- THE TOP PRICE SECTION --- */
+        .header-price {
+            background: var(--nike-black);
+            color: var(--nike-white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .preorder-tag {
+            font-family: 'Permanent Marker', cursive;
+            color: var(--nike-orange);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .main-price {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(5rem, 20vw, 12rem); /* Massive price at the top */
+            line-height: 0.8;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        /* --- IMAGE SECTION --- */
+        .image-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: -20px auto 40px; /* Overlaps the black header slightly */
+            padding: 0 20px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .main-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 10px solid var(--nike-black);
+        }
+
+        /* --- INFO SECTION --- */
+        .content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Anton', sans-serif;
+            font-size: 3rem;
+            margin: 0 0 10px 0;
+            letter-spacing: -1px;
+        }
+
+        .instruction {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+
+        /* Nike Pill Button */
+        .cta-btn {
+            display: inline-block;
+            background: var(--nike-black);
+            color: var(--nike-white);
+            text-decoration: none;
+            padding: 20px 60px;
+            border-radius: 100px;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+        }
+
+        .cta-btn:hover {
+            background: #333;
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 80px;
+            padding-bottom: 40px;
+            font-size: 0.7rem;
+            font-weight: 900;
+            letter-spacing: 5px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-price">
+        <span class="preorder-tag">PRE-ORDER ONLY</span>
+        <h2 class="main-price">K750</h2>
+    </header>
+
+    <div class="image-container">
+        <img src="O.jpg" alt="Nike Tracksuit Collection" class="main-img">
+    </div>
+
+    <div class="content">
+        <h1>NIKE TRACKSUIT</h1>
+        <p class="instruction">
+            Choose your size and color. Once decided, hit the button below to coordinate with the supplier for your pre-order.
+        </p>
+
+        <a href="https://wa.me/qr/JHU7JLO4QDFBD1" class="cta-btn">Contact Supplier</a>
+
+        <footer>JUST DO IT.</footer>
+    </div>
+
+</body>
+</html>
