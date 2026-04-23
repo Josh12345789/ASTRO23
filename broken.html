@@ -1,211 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BROKEN PLANET | COSMIC DROP</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;700;900&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --space-bg: #030303;
-            --planet-green: #a2ff00; 
-            --off-white: #e0e0e0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BROKEN PLANET | COSMIC DROP</title>
 
-        body {
-            background-color: var(--space-bg);
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(162, 255, 0, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 40%);
-            background-attachment: fixed;
-            color: var(--off-white);
-            font-family: 'Space Grotesk', sans-serif;
-            margin: 0;
-            text-align: center;
-            overflow-x: hidden;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;700;900&display=swap" rel="stylesheet">
 
-        /* --- GLITCH LOGO --- */
-        nav {
-            padding: 100px 20px 20px 20px;
-            display: flex;
-            justify-content: center;
-        }
+<style>
+:root{
+    --space-bg:#030303;
+    --planet-green:#a2ff00;
+    --off-white:#e0e0e0;
+}
 
-        .glitch-logo {
-            font-family: 'Archivo Black', sans-serif;
-            font-size: clamp(3rem, 12vw, 8rem);
-            color: var(--planet-green);
-            text-transform: uppercase;
-            letter-spacing: -5px;
-            position: relative;
-            animation: warpDrive 10s ease-in-out infinite;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .glitch-logo::before, .glitch-logo::after {
-            content: "BROKEN PLANET";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            opacity: 0.8;
-        }
+body{
+    background-color:var(--space-bg);
+    background-image:
+    radial-gradient(circle at 10% 20%, rgba(162,255,0,0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(255,255,255,0.05) 0%, transparent 40%);
+    background-attachment:fixed;
+    color:var(--off-white);
+    font-family:'Space Grotesk',sans-serif;
+    text-align:center;
+    overflow-x:hidden;
+}
 
-        .glitch-logo::before { color: #0ff; z-index: -1; animation: glitchEffect 3s infinite; }
-        .glitch-logo::after { color: #f0f; z-index: -2; animation: glitchEffect 3s infinite 1.5s; }
+/* LOGO */
+nav{
+    padding:100px 20px 20px;
+    display:flex;
+    justify-content:center;
+}
 
-        /* --- TOP ACTION SECTION --- */
-        .top-action {
-            margin-bottom: 40px;
-        }
+.glitch-logo{
+    font-family:'Archivo Black',sans-serif;
+    font-size:clamp(3rem,12vw,8rem);
+    color:var(--planet-green);
+    text-transform:uppercase;
+    letter-spacing:-5px;
+    position:relative;
+    animation:warpDrive 10s ease-in-out infinite;
+}
 
-        .order-btn {
-            display: inline-block;
-            background: var(--planet-green);
-            color: black;
-            text-decoration: none;
-            font-family: 'Archivo Black', sans-serif;
-            padding: 22px 70px;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
-            transition: 0.3s;
-            box-shadow: 0 0 20px rgba(162, 255, 0, 0.2);
-        }
+.glitch-logo::before,
+.glitch-logo::after{
+    content:"BROKEN PLANET";
+    position:absolute;
+    inset:0;
+    opacity:.8;
+}
 
-        .order-btn:hover {
-            background: white;
-            transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
-        }
+.glitch-logo::before{
+    color:#0ff;
+    z-index:-1;
+    animation:glitchEffect 3s infinite;
+}
 
-        /* --- COOL SUPPLIER TEXT --- */
-        .supplier-contact {
-            font-size: 0.7rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--planet-green);
-            margin-top: 20px;
-            font-weight: 900;
-            opacity: 0.8;
-            animation: pulseFade 2s infinite alternate;
-        }
+.glitch-logo::after{
+    color:#f0f;
+    z-index:-2;
+    animation:glitchEffect 3s infinite 1.5s;
+}
 
-        .supplier-link {
-            color: white;
-            text-decoration: underline;
-            cursor: pointer;
-        }
+/* PRICE BANNER */
+.price-banner{
+    max-width:900px;
+    margin:10px auto 35px;
+    padding:18px 25px;
+    border:1px solid rgba(162,255,0,.25);
+    background:rgba(162,255,0,.06);
+    color:var(--planet-green);
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:clamp(.9rem,2vw,1.2rem);
+    box-shadow:0 0 25px rgba(162,255,0,.08);
+    animation:pulseGlow 2s infinite alternate;
+}
 
-        /* --- PRODUCT GRID --- */
-        .broken-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-            max-width: 1400px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+/* ACTION */
+.top-action{
+    margin-bottom:40px;
+}
 
-        .broken-card {
-            background: #090909;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            overflow: hidden;
-            position: relative;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: cardRevealUp 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-        }
+.order-btn{
+    display:inline-block;
+    background:var(--planet-green);
+    color:#000;
+    text-decoration:none;
+    font-family:'Archivo Black',sans-serif;
+    padding:22px 70px;
+    font-size:1.2rem;
+    text-transform:uppercase;
+    clip-path:polygon(10% 0%,100% 0%,90% 100%,0% 100%);
+    transition:.3s;
+}
 
-        /* Staggered Delay */
-        .broken-card:nth-child(1) { animation-delay: 0.1s; }
-        .broken-card:nth-child(2) { animation-delay: 0.15s; }
-        .broken-card:nth-child(3) { animation-delay: 0.2s; }
-        .broken-card:nth-child(4) { animation-delay: 0.25s; }
-        .broken-card:nth-child(5) { animation-delay: 0.3s; }
-        .broken-card:nth-child(6) { animation-delay: 0.35s; }
-        .broken-card:nth-child(7) { animation-delay: 0.4s; }
-        .broken-card:nth-child(8) { animation-delay: 0.45s; }
-        .broken-card:nth-child(9) { animation-delay: 0.5s; }
-        .broken-card:nth-child(10) { animation-delay: 0.55s; }
-        .broken-card:nth-child(11) { animation-delay: 0.6s; }
-        .broken-card:nth-child(12) { animation-delay: 0.65s; }
+.order-btn:hover{
+    background:#fff;
+    transform:scale(1.05);
+}
 
-        .broken-card img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: 0.6s ease;
-        }
+.supplier-contact{
+    font-size:.7rem;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:var(--planet-green);
+    margin-top:20px;
+    font-weight:900;
+    opacity:.8;
+}
 
-        .broken-card:hover img {
-            transform: scale(1.1);
-        }
+.supplier-link{
+    color:#fff;
+    text-decoration:underline;
+}
 
-        /* --- ANIMATIONS --- */
-        @keyframes glitchEffect {
-            0% { clip: rect(10px, 9999px, 60px, 0); transform: translate(0); }
-            5% { clip: rect(40px, 9999px, 10px, 0); transform: translate(-2px, 2px); }
-            100% { clip: rect(10px, 9999px, 60px, 0); transform: translate(0); }
-        }
+/* GRID */
+.broken-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:15px;
+    max-width:1400px;
+    margin:40px auto;
+    padding:0 20px;
+}
 
-        @keyframes pulseFade {
-            from { opacity: 0.4; }
-            to { opacity: 1; }
-        }
+.broken-card{
+    background:#090909;
+    overflow:hidden;
+    opacity:0;
+    transform:translateY(30px);
+    animation:cardRevealUp .6s forwards;
+}
 
-        @keyframes cardRevealUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
+.broken-card:nth-child(1){animation-delay:.1s;}
+.broken-card:nth-child(2){animation-delay:.15s;}
+.broken-card:nth-child(3){animation-delay:.2s;}
+.broken-card:nth-child(4){animation-delay:.25s;}
+.broken-card:nth-child(5){animation-delay:.3s;}
+.broken-card:nth-child(6){animation-delay:.35s;}
 
-        @keyframes warpDrive {
-            0%, 100% { transform: skew(0deg); }
-            50% { transform: skew(1deg, 0.5deg); }
-        }
+.broken-card img{
+    width:100%;
+    display:block;
+    transition:.6s ease;
+}
 
-        @media (max-width: 768px) {
-            .broken-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-            .glitch-logo { font-size: 3.5rem; }
-        }
-    </style>
+.broken-card:hover img{
+    transform:scale(1.1);
+}
+
+/* ANIMATIONS */
+@keyframes glitchEffect{
+    0%{clip:rect(10px,9999px,60px,0);transform:translate(0);}
+    5%{clip:rect(40px,9999px,10px,0);transform:translate(-2px,2px);}
+    100%{clip:rect(10px,9999px,60px,0);transform:translate(0);}
+}
+
+@keyframes cardRevealUp{
+    to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes warpDrive{
+    0%,100%{transform:skew(0deg);}
+    50%{transform:skew(1deg,.5deg);}
+}
+
+@keyframes pulseGlow{
+    from{box-shadow:0 0 10px rgba(162,255,0,.05);}
+    to{box-shadow:0 0 35px rgba(162,255,0,.2);}
+}
+
+@media(max-width:768px){
+    .broken-grid{
+        grid-template-columns:1fr 1fr;
+        gap:8px;
+    }
+
+    .glitch-logo{
+        font-size:3.5rem;
+    }
+
+    .order-btn{
+        padding:18px 45px;
+        font-size:1rem;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <nav>
-        <h1 class="glitch-logo">BROKEN PLANET</h1>
-    </nav>
+<nav>
+    <h1 class="glitch-logo">BROKEN PLANET</h1>
+</nav>
 
-    <div class="top-action">
-        <a href="https://wa.me/qr/JHU7JLO4QDFBD1" class="order-btn">Secure Piece</a>
-        
-        <div class="supplier-contact">
-            [ ARCHIVE SEARCH FAILED? ] <br>
-            <a href="https://wa.me/qr/JHU7JLO4QDFBD1" style="color: inherit; text-decoration: none;">
-                SIGNAL THE <span class="supplier-link">SUPPLIER</span> FOR CUSTOM DROPS
-            </a>
-        </div>
+<!-- ADDED TRACKSUIT STATEMENT -->
+<div class="price-banner">
+    BROKEN PLANET TRACKSUITS GOING AT K750
+</div>
+
+<div class="top-action">
+    <a href="https://wa.me/qr/JHU7JLO4QDFBD1" class="order-btn">Secure Piece</a>
+
+    <div class="supplier-contact">
+        [ ARCHIVE SEARCH FAILED? ] <br>
+        <a href="https://wa.me/qr/JHU7JLO4QDFBD1" style="color:inherit;text-decoration:none;">
+            SIGNAL THE <span class="supplier-link">SUPPLIER</span> FOR CUSTOM DROPS
+        </a>
     </div>
+</div>
 
-    <div class="broken-grid">
-        <div class="broken-card"><img src="1.jpg"></div>
-        <div class="broken-card"><img src="2.jpg"></div>
-        <div class="broken-card"><img src="3.jpg"></div>
-        <div class="broken-card"><img src="4.jpg"></div>
-        <div class="broken-card"><img src="5.jpg"></div>
-        <div class="broken-card"><img src="6.jpg"></div>
-        <div class="broken-card"><img src="7.jpg"></div>
-        <div class="broken-card"><img src="8.jpg"></div>
-        <div class="broken-card"><img src="9.jpg"></div>
-        <div class="broken-card"><img src="10.jpg"></div>
-        <div class="broken-card"><img src="11.jpg"></div>
-        <div class="broken-card"><img src="12.jpg"></div>
-    </div>
+<div class="broken-grid">
+    <div class="broken-card"><img src="a.jpg"></div>
+    <div class="broken-card"><img src="b.jpg"></div>
+    <div class="broken-card"><img src="c.jpg"></div>
+    <div class="broken-card"><img src="e.jpg"></div>
+    <div class="broken-card"><img src="i.jpg"></div>
+    <div class="broken-card"><img src="m.jpg"></div>
+    <div class="broken-card"><img src="n.jpg"></div>
+    <div class="broken-card"><img src="o.jpg"></div>
+    <div class="broken-card"><img src="p.jpg"></div>
+    <div class="broken-card"><img src="q.jpg"></div>
+    <div class="broken-card"><img src="r.jpg"></div>
+    <div class="broken-card"><img src="t.jpg"></div>
+    <div class="broken-card"><img src="u.jpg"></div>
+    <div class="broken-card"><img src="v.jpg"></div>
+    <div class="broken-card"><img src="w.jpg"></div>
+    <div class="broken-card"><img src="x.jpg"></div>
+    <div class="broken-card"><img src="y.jpg"></div>
+    <div class="broken-card"><img src="z.jpg"></div>
+</div>
 
-    <footer style="padding: 60px 20px; opacity: 0.2; letter-spacing: 10px; font-weight: 700;">
-        ASTRO23 // BEYOND THE CLOUDS
-    </footer>
+<footer style="padding:60px 20px;opacity:.2;letter-spacing:10px;font-weight:700;">
+ASTRO23 // BEYOND THE CLOUDS
+</footer>
 
 </body>
 </html>
