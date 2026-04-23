@@ -59,7 +59,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 0 10%;
+            padding: 100px 10% 60px 10%; /* Increased padding for more content */
             box-sizing: border-box;
         }
 
@@ -84,10 +84,10 @@
         /* --- NAVIGATION GRID --- */
         .nav-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 15px;
             margin-top: 50px;
-            max-width: 1000px;
+            max-width: 1300px;
         }
 
         .nav-card {
@@ -148,10 +148,11 @@
             color: var(--accent-purple);
         }
 
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
             .brand-logo { top: 20px; left: 20px; }
             .brand-logo img { height: 60px; }
-            .main-portal { padding: 0 5%; }
+            .main-portal { padding: 140px 5% 40px 5%; }
             .nav-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -189,14 +190,24 @@
                 <small>Street Uniform</small>
             </a>
 
-            <a href="corteiz.html" class="nav-card">
-                <span>CORTEIZ</span>
-                <small>Rules The World</small>
-            </a>
-
             <a href="nike.html" class="nav-card">
                 <span>NIKE</span>
                 <small>Global Athletics</small>
+            </a>
+
+            <a href="syna.html" class="nav-card">
+                <span>SYNA</span>
+                <small>Premium Lifestyle</small>
+            </a>
+
+            <a href="broken.html" class="nav-card">
+                <span>BROKEN PLANET</span>
+                <small>Cosmic Streetwear</small>
+            </a>
+
+            <a href="tshirts.html" class="nav-card">
+                <span>TSHIRTS</span>
+                <small>Graphic Archive</small>
             </a>
 
             <a href="minus.html" class="nav-card">
