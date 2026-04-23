@@ -11,190 +11,136 @@
 
 <style>
 :root{
-    --space-bg:#030303;
-    --planet-green:#a2ff00;
-    --off-white:#e0e0e0;
+--space-bg:#030303;
+--planet-green:#a2ff00;
+--off-white:#e0e0e0;
 }
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    background-color:var(--space-bg);
-    background-image:
-    radial-gradient(circle at 10% 20%, rgba(162,255,0,0.08) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(255,255,255,0.05) 0%, transparent 40%);
-    background-attachment:fixed;
-    color:var(--off-white);
-    font-family:'Space Grotesk',sans-serif;
-    text-align:center;
-    overflow-x:hidden;
+background:#030303;
+color:var(--off-white);
+font-family:'Space Grotesk',sans-serif;
+text-align:center;
+overflow-x:hidden;
 }
 
-/* LOGO */
 nav{
-    padding:100px 20px 20px;
-    display:flex;
-    justify-content:center;
+padding:90px 20px 20px;
 }
 
 .glitch-logo{
-    font-family:'Archivo Black',sans-serif;
-    font-size:clamp(3rem,12vw,8rem);
-    color:var(--planet-green);
-    text-transform:uppercase;
-    letter-spacing:-5px;
-    position:relative;
-    animation:warpDrive 10s ease-in-out infinite;
+font-family:'Archivo Black',sans-serif;
+font-size:clamp(3rem,11vw,8rem);
+color:var(--planet-green);
+letter-spacing:-4px;
+text-transform:uppercase;
 }
 
-.glitch-logo::before,
-.glitch-logo::after{
-    content:"BROKEN PLANET";
-    position:absolute;
-    inset:0;
-    opacity:.8;
-}
-
-.glitch-logo::before{
-    color:#0ff;
-    z-index:-1;
-    animation:glitchEffect 3s infinite;
-}
-
-.glitch-logo::after{
-    color:#f0f;
-    z-index:-2;
-    animation:glitchEffect 3s infinite 1.5s;
-}
-
-/* PRICE BANNER */
 .price-banner{
-    max-width:900px;
-    margin:10px auto 35px;
-    padding:18px 25px;
-    border:1px solid rgba(162,255,0,.25);
-    background:rgba(162,255,0,.06);
-    color:var(--planet-green);
-    font-weight:900;
-    text-transform:uppercase;
-    letter-spacing:3px;
-    font-size:clamp(.9rem,2vw,1.2rem);
-    box-shadow:0 0 25px rgba(162,255,0,.08);
-    animation:pulseGlow 2s infinite alternate;
+max-width:950px;
+margin:15px auto 30px;
+padding:18px;
+border:1px solid rgba(162,255,0,.25);
+background:rgba(162,255,0,.06);
+color:var(--planet-green);
+font-weight:900;
+letter-spacing:3px;
+text-transform:uppercase;
 }
 
-/* ACTION */
-.top-action{
-    margin-bottom:40px;
+.discount-box{
+max-width:520px;
+margin:20px auto 50px;
+padding:25px;
+background:#0b0b0b;
+border:1px solid rgba(255,255,255,.08);
 }
 
-.order-btn{
-    display:inline-block;
-    background:var(--planet-green);
-    color:#000;
-    text-decoration:none;
-    font-family:'Archivo Black',sans-serif;
-    padding:22px 70px;
-    font-size:1.2rem;
-    text-transform:uppercase;
-    clip-path:polygon(10% 0%,100% 0%,90% 100%,0% 100%);
-    transition:.3s;
+.discount-title{
+font-size:14px;
+font-weight:900;
+letter-spacing:3px;
+margin-bottom:18px;
+text-transform:uppercase;
 }
 
-.order-btn:hover{
-    background:#fff;
-    transform:scale(1.05);
+.discount-box input{
+width:100%;
+padding:14px;
+background:#111;
+border:1px solid rgba(255,255,255,.1);
+color:#fff;
+text-align:center;
+margin-bottom:15px;
+outline:none;
 }
 
-.supplier-contact{
-    font-size:.7rem;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    color:var(--planet-green);
-    margin-top:20px;
-    font-weight:900;
-    opacity:.8;
+.discount-box button{
+width:100%;
+padding:14px;
+background:var(--planet-green);
+border:none;
+font-weight:900;
+cursor:pointer;
+text-transform:uppercase;
 }
 
-.supplier-link{
-    color:#fff;
-    text-decoration:underline;
+.discount-box button:hover{
+opacity:.9;
 }
 
-/* GRID */
-.broken-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:15px;
-    max-width:1400px;
-    margin:40px auto;
-    padding:0 20px;
+#result{
+display:none;
+margin-top:18px;
+padding:18px;
+background:#111;
 }
 
-.broken-card{
-    background:#090909;
-    overflow:hidden;
-    opacity:0;
-    transform:translateY(30px);
-    animation:cardRevealUp .6s forwards;
+.old-price{
+text-decoration:line-through;
+opacity:.5;
 }
 
-.broken-card:nth-child(1){animation-delay:.1s;}
-.broken-card:nth-child(2){animation-delay:.15s;}
-.broken-card:nth-child(3){animation-delay:.2s;}
-.broken-card:nth-child(4){animation-delay:.25s;}
-.broken-card:nth-child(5){animation-delay:.3s;}
-.broken-card:nth-child(6){animation-delay:.35s;}
-
-.broken-card img{
-    width:100%;
-    display:block;
-    transition:.6s ease;
+.new-price{
+font-size:34px;
+font-weight:900;
+color:var(--planet-green);
+margin-top:8px;
 }
 
-.broken-card:hover img{
-    transform:scale(1.1);
+.rule{
+font-size:12px;
+opacity:.7;
+letter-spacing:2px;
+margin-top:8px;
+text-transform:uppercase;
 }
 
-/* ANIMATIONS */
-@keyframes glitchEffect{
-    0%{clip:rect(10px,9999px,60px,0);transform:translate(0);}
-    5%{clip:rect(40px,9999px,10px,0);transform:translate(-2px,2px);}
-    100%{clip:rect(10px,9999px,60px,0);transform:translate(0);}
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:14px;
+max-width:1400px;
+margin:auto;
+padding:0 20px 60px;
 }
 
-@keyframes cardRevealUp{
-    to{opacity:1;transform:translateY(0);}
+.gallery img{
+width:100%;
+display:block;
+filter:grayscale(100%);
+transition:.4s;
 }
 
-@keyframes warpDrive{
-    0%,100%{transform:skew(0deg);}
-    50%{transform:skew(1deg,.5deg);}
-}
-
-@keyframes pulseGlow{
-    from{box-shadow:0 0 10px rgba(162,255,0,.05);}
-    to{box-shadow:0 0 35px rgba(162,255,0,.2);}
-}
-
-@media(max-width:768px){
-    .broken-grid{
-        grid-template-columns:1fr 1fr;
-        gap:8px;
-    }
-
-    .glitch-logo{
-        font-size:3.5rem;
-    }
-
-    .order-btn{
-        padding:18px 45px;
-        font-size:1rem;
-    }
+.gallery img:hover{
+filter:grayscale(0%);
+transform:scale(1.03);
 }
 </style>
 </head>
@@ -202,49 +148,68 @@ nav{
 <body>
 
 <nav>
-    <h1 class="glitch-logo">BROKEN PLANET</h1>
+<h1 class="glitch-logo">BROKEN PLANET</h1>
 </nav>
 
-<!-- ADDED TRACKSUIT STATEMENT -->
 <div class="price-banner">
-    BROKEN PLANET TRACKSUITS GOING AT K750
+BROKEN PLANET TRACKSUITS GOING AT K750
 </div>
 
-<div class="top-action">
-    <a href="https://wa.me/qr/JHU7JLO4QDFBD1" class="order-btn">Secure Piece</a>
+<div class="discount-box">
 
-    <div class="supplier-contact">
-        [ ARCHIVE SEARCH FAILED? ] <br>
-        <a href="https://wa.me/qr/JHU7JLO4QDFBD1" style="color:inherit;text-decoration:none;">
-            SIGNAL THE <span class="supplier-link">SUPPLIER</span> FOR CUSTOM DROPS
-        </a>
-    </div>
+<div class="discount-title">
+Enter Discount Code
 </div>
 
-<div class="broken-grid">
-    <div class="broken-card"><img src="a.jpg"></div>
-    <div class="broken-card"><img src="b.jpg"></div>
-    <div class="broken-card"><img src="c.jpg"></div>
-    <div class="broken-card"><img src="e.jpg"></div>
-    <div class="broken-card"><img src="i.jpg"></div>
-    <div class="broken-card"><img src="m.jpg"></div>
-    <div class="broken-card"><img src="n.jpg"></div>
-    <div class="broken-card"><img src="o.jpg"></div>
-    <div class="broken-card"><img src="p.jpg"></div>
-    <div class="broken-card"><img src="q.jpg"></div>
-    <div class="broken-card"><img src="r.jpg"></div>
-    <div class="broken-card"><img src="t.jpg"></div>
-    <div class="broken-card"><img src="u.jpg"></div>
-    <div class="broken-card"><img src="v.jpg"></div>
-    <div class="broken-card"><img src="w.jpg"></div>
-    <div class="broken-card"><img src="x.jpg"></div>
-    <div class="broken-card"><img src="y.jpg"></div>
-    <div class="broken-card"><img src="z.jpg"></div>
+<input type="text" id="code" placeholder="ENTER CODE">
+
+<button onclick="applyDiscount()">Apply Code</button>
+
+<div id="result">
+<div class="old-price">Original Price: K750</div>
+<div class="new-price">Discount Price: K675</div>
+<div class="rule">DISCOUNT RULES: 10% OFF APPLIED</div>
 </div>
 
-<footer style="padding:60px 20px;opacity:.2;letter-spacing:10px;font-weight:700;">
-ASTRO23 // BEYOND THE CLOUDS
-</footer>
+</div>
+
+<!-- ALL IMAGES FROM BEFORE -->
+<div class="gallery">
+<img src="a.jpg">
+<img src="b.jpg">
+<img src="c.jpg">
+<img src="e.jpg">
+<img src="i.jpg">
+<img src="m.jpg">
+<img src="n.jpg">
+<img src="o.jpg">
+<img src="p.jpg">
+<img src="q.jpg">
+<img src="r.jpg">
+<img src="t.jpg">
+<img src="u.jpg">
+<img src="v.jpg">
+<img src="w.jpg">
+<img src="x.jpg">
+<img src="y.jpg">
+<img src="z.jpg">
+</div>
+
+<script>
+function applyDiscount(){
+
+let code = document.getElementById("code").value.trim().toUpperCase();
+
+let validCodes = ["PLANET10","DROP10","TRACK10","VIP10","FIRST10"];
+
+if(validCodes.includes(code)){
+document.getElementById("result").style.display = "block";
+}else{
+alert("Invalid Discount Code");
+}
+
+}
+</script>
 
 </body>
 </html>
