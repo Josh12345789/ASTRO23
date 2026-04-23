@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BROKENPLANET</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #0b0b0b;
+        color: white;
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+    }
+
+    .topbar {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 40px;
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0.7;
+    }
+
+    .title {
+        text-align: center;
+        margin-top: 60px;
+        font-family: 'Anton', sans-serif;
+        font-size: 70px;
+        letter-spacing: 5px;
+    }
+
+    .subtitle {
+        text-align: center;
+        margin-top: 10px;
+        opacity: 0.6;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    .price {
+        text-align: center;
+        margin-top: 30px;
+        color: #ff3b3b;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .info {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 14px;
+        opacity: 0.8;
+    }
+
+    .contact-note {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 13px;
+        opacity: 0.6;
+        letter-spacing: 1px;
+    }
+
+    .cta {
+        display: block;
+        margin: 30px auto;
+        width: fit-content;
+        padding: 12px 25px;
+        border: 1px solid white;
+        text-decoration: none;
+        color: white;
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: 0.3s;
+    }
+
+    .cta:hover {
+        background: white;
+        color: black;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+        padding: 50px;
+    }
+
+    .gallery img {
+        width: 100%;
+        filter: grayscale(100%);
+        transition: 0.4s ease;
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .gallery img:hover {
+        filter: grayscale(0%);
+        transform: scale(1.03);
+    }
+
+    .footer {
+        text-align: center;
+        padding: 40px;
+        font-size: 12px;
+        opacity: 0.4;
+        letter-spacing: 2px;
+    }
+</style>
+
+</head>
+
+<body>
+
+<div class="topbar">
+    <div>DROP 01</div>
+    <div>LIMITED</div>
+</div>
+
+<div class="title">BROKEN PLANET</div>
+<div class="subtitle">COLD WEATHER SYSTEM</div>
+
+<div class="price">WINDBREAKERS — K280 PREORDER ONLY</div>
+
+<div class="info">
+    Select a piece below and secure your order via supplier link.
+</div>
+
+<p class="contact-note">
+    Don’t see what you want? Contact the supplier.
+</p>
+
+<a class="cta" href="https://wa.me/qr/JHU7JLO4QDFBD1">Contact Supplier</a>
+
+<div class="gallery">
+    <img src="1.jpg">
+    <img src="2.jpg">
+    <img src="3.jpg">
+    <img src="4.jpg">
+    <img src="5.jpg">
+    <img src="6.jpg">
+    <img src="7.jpg">
+    <img src="8.jpg">
+    <img src="9.jpg">
+    <img src="10.jpg">
+    <img src="11.jpg">
+    <img src="12.jpg">
+</div>
+
+<div class="footer">
+    BROKENPLANET © DROP SYSTEM — ALL RIGHTS RESERVED
+</div>
+
+</body>
+</html>
