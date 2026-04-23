@@ -3,223 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASTRO23 | OFFICIAL PORTAL</title>
+    <title>SYNA WORLD | HYPER-DROP</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;900&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --accent-purple: #8a2be2;
-            --bg-dark: #000505;
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --bg-black: #000000;
+            --card-black: #0a0a0a; 
+            --syna-off-white: #f5f5f0;
+            --syna-blue: #0033ff; 
+            --syna-accent: #ff0044; 
         }
 
-        body, html {
+        body {
+            background-color: var(--bg-black);
+            background-image: 
+                radial-gradient(circle at center, rgba(138, 43, 226, 0.15), transparent 60%),
+                url('https://images.unsplash.com/photo-1506318137071-a8e063b4cadc?q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--syna-off-white);
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-dark);
-            font-family: 'Inter', sans-serif;
-            color: white;
+            text-align: center;
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
 
-        /* --- IMMERSIVE BACKGROUND --- */
-        .hero-bg {
+        /* --- 1. ANIMATED ALERT BAR --- */
+        .live-alert {
+            background-color: var(--syna-blue);
+            color: white;
+            padding: 12px;
+            font-family: 'Archivo Black', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            z-index: -2;
-            background: linear-gradient(rgba(0,5,5,0.7), rgba(0,5,5,0.7)), url('./photo2.jpg');
-            background-size: cover;
-            background-position: center;
-            filter: contrast(1.1) brightness(0.8);
+            z-index: 200;
+            animation: slideDown 0.8s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
-        /* --- THE LOGO --- */
-        .brand-logo {
-            position: absolute;
-            top: 40px;
-            left: 40px;
-            z-index: 100;
-            transition: 0.3s;
-        }
-        .brand-logo img {
-            height: 80px; 
-            filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.5));
-        }
-
-        /* --- MAIN CONTENT --- */
-        .main-portal {
-            min-height: 100vh;
+        /* --- 2. PULSING CIRCULAR LOGO --- */
+        nav {
+            padding: 160px 20px 80px 20px;
             display: flex;
-            flex-direction: column;
             justify-content: center;
-            padding: 100px 10% 60px 10%; /* Increased padding for more content */
-            box-sizing: border-box;
+            animation: fadeIn 1.5s ease;
         }
 
-        .welcome-header {
-            font-family: 'Syncopate', sans-serif;
-            font-size: clamp(2rem, 10vw, 6rem);
-            font-weight: 700;
-            letter-spacing: 15px;
+        .logo-circle {
+            height: 220px;
+            width: 220px;
+            border-radius: 50%;
+            border: 2px solid var(--syna-blue);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 30px rgba(0, 51, 255, 0.5);
+            animation: logoPulse 4s infinite alternate ease-in-out;
+            overflow: hidden;
+            background: black;
+        }
+
+        .logo-img {
+            width: 130%;
+            mix-blend-mode: screen;
+        }
+
+        /* --- 3. GLITCHING PRICE TAG --- */
+        .price-announcement {
+            background: rgba(255, 0, 68, 0.1);
+            border: 2px solid var(--syna-accent);
+            display: inline-block;
+            padding: 20px 40px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 20px rgba(255, 0, 68, 0.2);
+            animation: glitch 3s infinite; /* Glitch effect */
+        }
+
+        .alert-title {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 2.8rem;
+            color: var(--syna-accent);
+            letter-spacing: -2px;
             margin: 0;
-            line-height: 0.9;
         }
 
-        .tagline {
-            font-size: 0.8rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: var(--accent-purple);
-            margin-top: 20px;
-            font-weight: 900;
-        }
-
-        /* --- NAVIGATION GRID --- */
-        .nav-grid {
+        /* --- 4. STAGGERED GRID REVEAL --- */
+        .syna-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-            margin-top: 50px;
-            max-width: 1300px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2px;
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        .nav-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            padding: 30px;
-            text-decoration: none;
-            color: white;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            min-height: 120px;
+        .product-card {
+            background-color: var(--card-black);
+            position: relative;
+            overflow: hidden;
+            opacity: 0; /* Starts hidden for reveal */
+            transform: translateY(30px);
+            animation: revealUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         }
 
-        .nav-card:hover {
-            background: var(--accent-purple);
-            transform: translateY(-10px) scale(1.02);
-            border-color: #fff;
+        /* Stagger delays for each card */
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+        .product-card:nth-child(5) { animation-delay: 0.5s; }
+        .product-card:nth-child(6) { animation-delay: 0.6s; }
+        .product-card:nth-child(7) { animation-delay: 0.7s; }
+        .product-card:nth-child(8) { animation-delay: 0.8s; }
+
+        .product-card img {
+            width: 100%;
+            transition: transform 0.5s scale 0.5s;
         }
 
-        .nav-card span {
-            font-family: 'Syncopate', sans-serif;
-            font-weight: 700;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
+        .product-card:hover img {
+            transform: scale(1.05);
+            filter: brightness(1.2);
         }
 
-        .nav-card small {
-            font-size: 0.6rem;
-            letter-spacing: 3px;
-            margin-top: 10px;
-            opacity: 0.6;
-            text-transform: uppercase;
+        /* Scanline effect on hover */
+        .product-card::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 51, 255, 0.1) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.05), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.05));
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
         }
 
-        /* --- FOOTER ELEMENTS --- */
-        .contact-footer {
-            margin-top: 60px;
-            display: flex;
-            gap: 30px;
-        }
-
-        .email-link {
-            color: white;
-            text-decoration: none;
-            font-family: 'Syncopate', sans-serif;
-            font-size: 0.6rem;
-            letter-spacing: 3px;
-            opacity: 0.5;
-            transition: 0.3s;
-        }
-
-        .email-link:hover {
+        .product-card:hover::after {
             opacity: 1;
-            color: var(--accent-purple);
         }
 
-        /* Mobile Adjustments */
+        /* --- 5. FLOATING BUTTON --- */
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: var(--syna-blue);
+            color: white;
+            text-decoration: none;
+            font-family: 'Archivo Black', sans-serif;
+            padding: 25px 70px;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            margin: 70px 0;
+            transition: all 0.3s;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* --- KEYFRAMES --- */
+        @keyframes revealUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes logoPulse {
+            0% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 51, 255, 0.4); }
+            100% { transform: scale(1.05); box-shadow: 0 0 50px rgba(0, 51, 255, 0.8); }
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        @keyframes slideDown { 
+            from { transform: translateY(-100%); } 
+            to { transform: translateY(0); } 
+        }
+
+        /* Mobile */
         @media (max-width: 768px) {
-            .brand-logo { top: 20px; left: 20px; }
-            .brand-logo img { height: 60px; }
-            .main-portal { padding: 140px 5% 40px 5%; }
-            .nav-grid { grid-template-columns: 1fr; }
+            .logo-circle { height: 160px; width: 160px; }
+            .alert-title { font-size: 1.8rem; }
+            nav { padding: 120px 10px 40px 10px; }
+            .syna-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="hero-bg"></div>
+    <div class="live-alert">SYNA WORLD PORTAL // ENCRYPTED ACCESS // 2026</div>
 
-    <div class="brand-logo">
-        <img src="LO.jpg" alt="ASTRO23 Logo">
+    <nav>
+        <div class="logo-circle">
+            <img src="synalogo.jpg" alt="SYNA" class="logo-img">
+        </div>
+    </nav>
+
+    <header>
+        <div class="price-announcement">
+            <p class="alert-title">K750 FLAT RATE</p>
+            <p style="font-family: 'Archivo Black'; margin-top: 10px; letter-spacing: 2px;">TRACKSUIT DROP // ALL SIZES</p>
+        </div>
+        <p style="opacity: 0.6; text-transform: uppercase; font-weight: 900; letter-spacing: 2px; margin-top: 20px;">Limited Drop. Secure yours before the link expires.</p>
+        
+        <a href="https://wa.me/qr/JHU7JLO4QDFBD1" class="btn-whatsapp">Secure Order</a>
+    </header>
+
+    <div class="syna-grid">
+        <div class="product-card"><img src="track1.jpg"></div>
+        <div class="product-card"><img src="track3.jpg"></div>
+        <div class="product-card"><img src="tracks2.jpg"></div>
+        <div class="product-card"><img src="trackss5.jpg"></div>
+        <div class="product-card"><img src="tracks6.jpg"></div>
+        <div class="product-card"><img src="up1.jpg"></div>
+        <div class="product-card"><img src="up2.jpg"></div>
+        <div class="product-card"><img src="ups3.jpg"></div>
     </div>
 
-    <main class="main-portal">
-        <h1 class="welcome-header">ASTRO23</h1>
-        <div class="tagline">PRE-ORDER & DIRECT PURCHASE PORTAL</div>
-
-        <div class="nav-grid">
-            <a href="croc.html" class="nav-card">
-                <span>CROCS</span>
-                <small>Classic Heritage</small>
-            </a>
-            
-            <a href="windbreaker.html" class="nav-card">
-                <span>WINDBREAKERS</span>
-                <small>Tech Performance</small>
-            </a>
-
-            <a href="BapeCrocs.html" class="nav-card">
-                <span>BAPE CROCS</span>
-                <small>Limited Collab</small>
-            </a>
-
-            <a href="tracksuits.html" class="nav-card">
-                <span>TRACKSUITS</span>
-                <small>Street Uniform</small>
-            </a>
-
-            <a href="nike.html" class="nav-card">
-                <span>NIKE</span>
-                <small>Global Athletics</small>
-            </a>
-
-            <a href="syna.html" class="nav-card">
-                <span>SYNA</span>
-                <small>Premium Lifestyle</small>
-            </a>
-
-            <a href="broken.html" class="nav-card">
-                <span>BROKEN PLANET</span>
-                <small>Cosmic Streetwear</small>
-            </a>
-
-            <a href="tshirts.html" class="nav-card">
-                <span>TSHIRTS</span>
-                <small>Graphic Archive</small>
-            </a>
-
-            <a href="minus.html" class="nav-card">
-                <span>MINUS</span>
-                <small>Underground Drop</small>
-            </a>
-        </div>
-
-        <div class="contact-footer">
-            <a href="mailto:kachesajoshua11@gmail.com" class="email-link">ESTABLISHED 2026 // CONTACT SUPPORT</a>
-        </div>
-    </main>
+    <footer style="padding: 100px 20px; opacity: 0.3; letter-spacing: 5px; font-weight: 900;">
+        SYNA WORLD // NO RETREAT NO SURRENDER
+    </footer>
 
 </body>
 </html>
