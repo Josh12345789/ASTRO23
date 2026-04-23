@@ -1,284 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SYNA WORLD | HYPER-DROP</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNA WORLD | HYPER-DROP</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-black: #000000;
+            --card-black: #0a0a0a; 
+            --syna-off-white: #f5f5f0;
+            --syna-blue: #0033ff; 
+            --syna-accent: #ff0044; 
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+        body {
+            background-color: var(--bg-black);
+            background-image: 
+                radial-gradient(circle at center, rgba(138, 43, 226, 0.15), transparent 60%),
+                url('https://images.unsplash.com/photo-1506318137071-a8e063b4cadc?q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--syna-off-white);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
 
-<style>
-:root{
-    --bg:#000;
-    --blue:#0033ff;
-    --red:#ff0044;
-    --white:#f5f5f0;
-}
+        .live-alert {
+            background-color: var(--syna-blue);
+            color: white;
+            padding: 12px;
+            font-family: 'Archivo Black', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            z-index: 200;
+            animation: slideDown 0.8s ease;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        nav {
+            padding: 160px 20px 80px 20px;
+            display: flex;
+            justify-content: center;
+        }
 
-body{
-    background:#000;
-    color:var(--white);
-    font-family:'Inter',sans-serif;
-    text-align:center;
-    overflow-x:hidden;
-    position:relative;
-}
+        /* --- THE LOGO CONTAINER --- */
+        .logo-circle {
+            height: 220px;
+            width: 220px;
+            border-radius: 50%;
+            border: 2px solid var(--syna-blue);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 30px rgba(0, 51, 255, 0.5);
+            animation: logoPulse 4s infinite alternate ease-in-out;
+            overflow: hidden;
+            background: #000; /* Solid black background if image fails */
+        }
 
-/* animated background */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:
-        radial-gradient(circle at 20% 20%, rgba(0,51,255,.18), transparent 30%),
-        radial-gradient(circle at 80% 30%, rgba(255,0,68,.14), transparent 30%),
-        radial-gradient(circle at 50% 80%, rgba(255,255,255,.04), transparent 30%);
-    animation:bgMove 10s infinite alternate linear;
-    z-index:-2;
-}
+        .logo-img {
+            width: 100%; /* Changed to 100% to ensure it shows up */
+            height: 100%;
+            object-fit: cover; /* Ensures the logo fills the circle */
+            display: block;
+        }
 
-body::after{
-    content:"";
-    position:fixed;
-    inset:0;
-    background-image:
-        linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
-    background-size:40px 40px;
-    animation:gridMove 18s linear infinite;
-    z-index:-1;
-}
+        .price-announcement {
+            background: rgba(255, 0, 68, 0.1);
+            border: 2px solid var(--syna-accent);
+            display: inline-block;
+            padding: 20px 40px;
+            margin-bottom: 25px;
+            animation: glitch 3s infinite;
+        }
 
-/* top bar */
-.live-alert{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    padding:14px;
-    background:var(--blue);
-    font-family:'Archivo Black',sans-serif;
-    letter-spacing:2px;
-    font-size:.8rem;
-    z-index:99;
-}
+        .alert-title {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 2.8rem;
+            color: var(--syna-accent);
+            letter-spacing: -2px;
+            margin: 0;
+        }
 
-/* nav */
-nav{
-    padding:150px 20px 70px;
-    display:flex;
-    justify-content:center;
-}
+        .syna-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2px;
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-/* logo circle */
-.logo-circle{
-    width:260px;
-    height:260px;
-    border-radius:50%;
-    background:#000;
-    border:2px solid rgba(255,255,255,.08);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    overflow:hidden;
-    position:relative;
-    box-shadow:
-        0 0 35px rgba(0,51,255,.45),
-        0 0 70px rgba(255,0,68,.10);
-    animation:pulse 4s infinite alternate;
-}
+        .product-card {
+            background-color: var(--card-black);
+            overflow: hidden;
+        }
 
-.logo-circle::before{
-    content:"";
-    position:absolute;
-    inset:-8px;
-    border-radius:50%;
-    border:2px solid rgba(0,51,255,.25);
-    animation:spin 8s linear infinite;
-}
+        .product-card img {
+            width: 100%;
+            transition: 0.5s;
+        }
 
-/* IMPORTANT FIX:
-   NO FILTERS = original image colors stay */
-.logo-img{
-    position:relative;
-    z-index:3;
-    width:115%;
-    height:115%;
-    object-fit:contain;
+        .product-card:hover img { transform: scale(1.05); }
 
-    /* removed white filter completely */
-    filter:none;
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: var(--syna-blue);
+            color: white;
+            text-decoration: none;
+            font-family: 'Archivo Black', sans-serif;
+            padding: 25px 70px;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            margin: 70px 0;
+            animation: float 3s ease-in-out infinite;
+        }
 
-    transform:scale(1.15);
-}
+        @keyframes logoPulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); box-shadow: 0 0 50px rgba(0, 51, 255, 0.8); }
+        }
 
-/* price box */
-.price-box{
-    display:inline-block;
-    padding:24px 42px;
-    border:2px solid var(--red);
-    background:rgba(255,0,68,.08);
-    animation:glitch 3s infinite;
-}
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
 
-.price-box h1{
-    font-family:'Archivo Black',sans-serif;
-    font-size:3rem;
-    color:var(--red);
-}
+        @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
 
-.price-box p{
-    margin-top:10px;
-    letter-spacing:2px;
-    font-weight:900;
-}
-
-.sub{
-    margin-top:22px;
-    opacity:.65;
-    font-weight:900;
-    letter-spacing:2px;
-    text-transform:uppercase;
-}
-
-/* button */
-.btn{
-    display:inline-block;
-    margin:45px 0 60px;
-    padding:22px 60px;
-    background:var(--blue);
-    color:#fff;
-    text-decoration:none;
-    font-family:'Archivo Black',sans-serif;
-    box-shadow:0 0 20px rgba(0,51,255,.45);
-    animation:floatBtn 3s infinite ease-in-out;
-}
-
-/* products */
-.syna-grid{
-    width:min(1500px,95%);
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:14px;
-    padding-bottom:80px;
-}
-
-.product-card{
-    overflow:hidden;
-    background:#0b0b0b;
-    border:1px solid rgba(255,255,255,.04);
-}
-
-.product-card img{
-    width:100%;
-    display:block;
-    transition:.5s;
-}
-
-.product-card:hover img{
-    transform:scale(1.05);
-    filter:brightness(1.12);
-}
-
-footer{
-    padding:80px 20px;
-    opacity:.35;
-    letter-spacing:5px;
-    font-weight:900;
-}
-
-/* animations */
-@keyframes pulse{
-    from{transform:scale(1);}
-    to{transform:scale(1.05);}
-}
-
-@keyframes spin{
-    from{transform:rotate(0deg);}
-    to{transform:rotate(360deg);}
-}
-
-@keyframes bgMove{
-    from{transform:translate(0,0);}
-    to{transform:translate(-40px,-25px);}
-}
-
-@keyframes gridMove{
-    from{transform:translateY(0);}
-    to{transform:translateY(40px);}
-}
-
-@keyframes glitch{
-    0%,100%{transform:translate(0);}
-    20%{transform:translate(-2px,2px);}
-    40%{transform:translate(2px,-2px);}
-    60%{transform:translate(-2px,-1px);}
-}
-
-@keyframes floatBtn{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
-}
-
-@media(max-width:768px){
-    nav{padding-top:130px;}
-
-    .logo-circle{
-        width:190px;
-        height:190px;
-    }
-
-    .price-box h1{
-        font-size:2.2rem;
-    }
-}
-</style>
+        @media (max-width: 768px) {
+            .logo-circle { height: 160px; width: 160px; }
+            nav { padding: 120px 10px 40px 10px; }
+            .syna-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="live-alert">SYNA WORLD PORTAL // ENCRYPTED ACCESS // 2026</div>
+    <div class="live-alert">SYNA WORLD PORTAL // ENCRYPTED ACCESS // 2026</div>
 
-<nav>
-    <div class="logo-circle">
-        <img src="synalogo.jpg" class="logo-img" alt="SYNA LOGO">
+    <nav>
+        <div class="logo-circle">
+            <img src="synalogo.jpg" class="logo-img" alt="SYNA LOGO">
+        </div>
+    </nav>
+
+    <header>
+        <div class="price-announcement">
+            <p class="alert-title">K750 FLAT RATE</p>
+            <p style="font-family: 'Archivo Black'; margin-top: 10px; letter-spacing: 2px;">TRACKSUIT DROP // ALL SIZES</p>
+        </div>
+        <p style="opacity: 0.6; text-transform: uppercase; font-weight: 900; letter-spacing: 2px; margin-top: 20px;">Limited Drop. Secure yours before the link expires.</p>
+        <a href="https://wa.me/qr/JHU7JLO4QDFBD1" class="btn-whatsapp">Secure Order</a>
+    </header>
+
+    <div class="syna-grid">
+        <div class="product-card"><img src="track1.jpg"></div>
+        <div class="product-card"><img src="track3.jpg"></div>
+        <div class="product-card"><img src="tracks2.jpg"></div>
+        <div class="product-card"><img src="trackss5.jpg"></div>
+        <div class="product-card"><img src="tracks6.jpg"></div>
+        <div class="product-card"><img src="up1.jpg"></div>
+        <div class="product-card"><img src="up2.jpg"></div>
+        <div class="product-card"><img src="ups3.jpg"></div>
     </div>
-</nav>
 
-<header>
-    <div class="price-box">
-        <h1>K750 FLAT RATE</h1>
-        <p>TRACKSUIT DROP // ALL SIZES</p>
-    </div>
-
-    <p class="sub">Limited Drop. Secure yours before the link expires.</p>
-
-    <a href="https://wa.me/qr/JHU7JLO4QDFBD1" class="btn">SECURE ORDER</a>
-</header>
-
-<div class="syna-grid">
-    <div class="product-card"><img src="track1.jpg"></div>
-    <div class="product-card"><img src="track3.jpg"></div>
-    <div class="product-card"><img src="tracks2.jpg"></div>
-    <div class="product-card"><img src="trackss5.jpg"></div>
-    <div class="product-card"><img src="tracks6.jpg"></div>
-    <div class="product-card"><img src="up1.jpg"></div>
-    <div class="product-card"><img src="up2.jpg"></div>
-    <div class="product-card"><img src="ups3.jpg"></div>
-</div>
-
-<footer>
-SYNA WORLD // NO RETREAT NO SURRENDER
-</footer>
+    <footer style="padding: 100px 20px; opacity: 0.3; letter-spacing: 5px; font-weight: 900;">
+        SYNA WORLD // NO RETREAT NO SURRENDER
+    </footer>
 
 </body>
 </html>
