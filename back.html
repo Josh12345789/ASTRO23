@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASTRO23 | OFFICIAL PORTAL</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --accent-purple: #8a2be2;
+            --bg-dark: #000505;
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            font-family: 'Inter', sans-serif;
+            color: white;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* --- IMMERSIVE BACKGROUND --- */
+        .hero-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: linear-gradient(rgba(0,5,5,0.7), rgba(0,5,5,0.7)), url('./photo2.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: contrast(1.1) brightness(0.8);
+        }
+
+        /* --- THE LOGO --- */
+        .brand-logo {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            z-index: 100;
+            transition: 0.3s;
+        }
+        .brand-logo img {
+            height: 80px; 
+            filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.5));
+        }
+
+        /* --- MAIN CONTENT --- */
+        .main-portal {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
+            box-sizing: border-box;
+        }
+
+        .welcome-header {
+            font-family: 'Syncopate', sans-serif;
+            font-size: clamp(2rem, 10vw, 6rem);
+            font-weight: 700;
+            letter-spacing: 15px;
+            margin: 0;
+            line-height: 0.9;
+        }
+
+        .tagline {
+            font-size: 0.8rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--accent-purple);
+            margin-top: 20px;
+            font-weight: 900;
+        }
+
+        /* --- NAVIGATION GRID --- */
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 50px;
+            max-width: 1000px;
+        }
+
+        .nav-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 120px;
+        }
+
+        .nav-card:hover {
+            background: var(--accent-purple);
+            transform: translateY(-10px) scale(1.02);
+            border-color: #fff;
+        }
+
+        .nav-card span {
+            font-family: 'Syncopate', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        .nav-card small {
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            margin-top: 10px;
+            opacity: 0.6;
+            text-transform: uppercase;
+        }
+
+        /* --- FOOTER ELEMENTS --- */
+        .contact-footer {
+            margin-top: 60px;
+            display: flex;
+            gap: 30px;
+        }
+
+        .email-link {
+            color: white;
+            text-decoration: none;
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            opacity: 0.5;
+            transition: 0.3s;
+        }
+
+        .email-link:hover {
+            opacity: 1;
+            color: var(--accent-purple);
+        }
+
+        @media (max-width: 768px) {
+            .brand-logo { top: 20px; left: 20px; }
+            .brand-logo img { height: 60px; }
+            .main-portal { padding: 0 5%; }
+            .nav-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-bg"></div>
+
+    <div class="brand-logo">
+        <img src="LO.jpg" alt="ASTRO23 Logo">
+    </div>
+
+    <main class="main-portal">
+        <h1 class="welcome-header">ASTRO23</h1>
+        <div class="tagline">PRE-ORDER & DIRECT PURCHASE PORTAL</div>
+
+        <div class="nav-grid">
+            <a href="croc.html" class="nav-card">
+                <span>CROCS</span>
+                <small>Classic Heritage</small>
+            </a>
+            
+            <a href="windbreaker.html" class="nav-card">
+                <span>WINDBREAKERS</span>
+                <small>Tech Performance</small>
+            </a>
+
+            <a href="BapeCrocs.html" class="nav-card">
+                <span>BAPE CROCS</span>
+                <small>Limited Collab</small>
+            </a>
+
+            <a href="tracksuits.html" class="nav-card">
+                <span>TRACKSUITS</span>
+                <small>Street Uniform</small>
+            </a>
+
+            <a href="corteiz.html" class="nav-card">
+                <span>CORTEIZ</span>
+                <small>Rules The World</small>
+            </a>
+
+            <a href="nike.html" class="nav-card">
+                <span>NIKE</span>
+                <small>Global Athletics</small>
+            </a>
+
+            <a href="minus.html" class="nav-card">
+                <span>MINUS</span>
+                <small>Underground Drop</small>
+            </a>
+        </div>
+
+        <div class="contact-footer">
+            <a href="mailto:kachesajoshua11@gmail.com" class="email-link">ESTABLISHED 2026 // CONTACT SUPPORT</a>
+        </div>
+    </main>
+
+</body>
+</html>
