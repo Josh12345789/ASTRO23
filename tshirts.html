@@ -72,7 +72,6 @@ background:#fff;
 color:#000;
 }
 
-/* DISCOUNT BOX */
 .discount-box{
 max-width:500px;
 margin:10px auto 40px;
@@ -206,7 +205,6 @@ letter-spacing:2px;
 
 <a class="cta" href="https://wa.me/qr/JHU7JLO4QDFBD1">CONTACT SUPPLIER</a>
 
-<!-- DISCOUNT -->
 <div class="discount-box">
 
 <div class="discount-title">ENTER DISCOUNT CODE</div>
@@ -223,7 +221,6 @@ letter-spacing:2px;
 
 </div>
 
-<!-- SYNA -->
 <div class="section">
 <h2>SYNA</h2>
 <p>K150 EACH</p>
@@ -238,7 +235,6 @@ letter-spacing:2px;
 </div>
 </div>
 
-<!-- CORTEIZ -->
 <div class="section">
 <h2>CORTEIZ</h2>
 <p>K150 EACH</p>
@@ -251,7 +247,6 @@ letter-spacing:2px;
 </div>
 </div>
 
-<!-- BROKEN PLANET -->
 <div class="section">
 <h2>BROKEN PLANET</h2>
 <p>K150 EACH — DROP SERIES</p>
@@ -276,10 +271,22 @@ function applyDiscount(){
 
 let code = document.getElementById("code").value.trim().toUpperCase();
 
-let validCodes = ["PLANET10","DROP10","TRACK10","VIP10","FIRST10"];
+let validCodes = ["PLANET10","FIRST10","DROP10","TRACK10","VIP10"];
+
+let usedCodes = JSON.parse(localStorage.getItem("usedCodesTshirt")) || [];
 
 if(validCodes.includes(code)){
+
+if(usedCodes.includes(code)){
+alert("This discount code has already been used.");
+return;
+}
+
 document.getElementById("discountResult").style.display = "block";
+
+usedCodes.push(code);
+localStorage.setItem("usedCodesTshirt", JSON.stringify(usedCodes));
+
 }else{
 alert("Invalid Discount Code");
 }
