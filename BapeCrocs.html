@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;600;900&display=swap" rel="stylesheet">
 <link rel="icon" type="image/jpg" href="astrofav.jpg">
+
 <style>
 :root{
 --bape-purple:#8a2be2;
@@ -218,7 +219,6 @@ grid-template-columns:1fr;
 
 </div>
 
-<!-- CLEAN DISCOUNT BOX -->
 <div class="discount-box">
 
 <div class="discount-title">ENTER DISCOUNT CODE</div>
@@ -246,10 +246,22 @@ function applyDiscount(){
 
 let code = document.getElementById("code").value.trim().toUpperCase();
 
-let validCodes = ["PLANET10","DROP10","TRACK10","VIP10","FIRST10"];
+let validCodes = ["PLANET10","FIRST10","DROP10","TRACK10","VIP10"];
+
+let usedCodes = JSON.parse(localStorage.getItem("usedCodesBape")) || [];
 
 if(validCodes.includes(code)){
+
+if(usedCodes.includes(code)){
+alert("This discount code has already been used.");
+return;
+}
+
 document.getElementById("discountResult").style.display = "block";
+
+usedCodes.push(code);
+localStorage.setItem("usedCodesBape", JSON.stringify(usedCodes));
+
 }else{
 alert("Invalid Discount Code");
 }
